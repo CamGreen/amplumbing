@@ -63,10 +63,6 @@ st.markdown(
     </style>
 
     <div class="banner">
-        <div class="banner-text">
-            <h1>AM Plumbing</h1>
-            <h4>Reliable Plumbing Services You Can Trust</h4>
-        </div>
     </div>
     """,
     unsafe_allow_html=True
@@ -217,6 +213,7 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
+
 
 
 
