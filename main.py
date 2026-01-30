@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import base64
 from io import BytesIO
+from pathlib import Path
 
 # Page configuration
 st.set_page_config(page_title="AM Plumbing", layout="wide")
@@ -216,6 +217,7 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
+
 
 
 
