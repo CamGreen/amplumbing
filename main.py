@@ -3,17 +3,6 @@ import os
 import base64
 from io import BytesIO
 
-# def get_base64_image(image_path):
-#     with open(image_path, "rb") as img_file:
-#         encoded = base64.b64encode(img_file.read()).decode()
-#     return f"data:image/png;base64,{encoded}"
-
-def get_base64_image(path):
-    with open(path, "rb") as img_file:
-        byte_data = BytesIO(img_file.read())
-        encoded = base64.b64encode(byte_data.getvalue()).decode()
-        return f"data:image/png;base64,{encoded}"
-
 # Page configuration
 st.set_page_config(page_title="AM Plumbing", layout="wide")
 image_dir = "assets"
@@ -31,7 +20,17 @@ banner_base64 = get_base64_image("assets\banner2.png")
 if "page" not in st.session_state:
     st.session_state.page = "Home"
 
-# 🌄 Full width HTML banner with text overlay
+def get_base64_image(path):
+    if not Path(path).exists():
+        return ""
+    with open(path, "rb") as img_file:
+        byte_data = BytesIO(img_file.read())
+        encoded = base64.b64encode(byte_data.getvalue()).decode()
+        return f"data:image/png;base64,{encoded}"
+
+# ✅ NEW relative path instead of local disk location
+banner_base64 = get_base64_image("assets/banner2.png")
+
 st.markdown(
     f"""
     <style>
@@ -65,6 +64,10 @@ st.markdown(
     </style>
 
     <div class="banner">
+        <div class="banner-text">
+            <h1>AM Plumbing</h1>
+            <h4>Reliable Plumbing Services You Can Trust</h4>
+        </div>
     </div>
     """,
     unsafe_allow_html=True
@@ -215,3 +218,4 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
+
