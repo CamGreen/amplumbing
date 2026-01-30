@@ -14,8 +14,6 @@ gallery_images = [
     ("gasGeyser2.jpeg", "Gas Geyser Installation"),
     ("burstPipe.jpeg", "Burst Pipe Repair")]
 
-banner_base64 = get_base64_image("assets/banner2.png")
-
 # Session state page
 if "page" not in st.session_state:
     st.session_state.page = "Home"
@@ -218,5 +216,6 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
+
 
 
