@@ -1,5 +1,18 @@
 import streamlit as st
 import os
+import base64
+from io import BytesIO
+
+# def get_base64_image(image_path):
+#     with open(image_path, "rb") as img_file:
+#         encoded = base64.b64encode(img_file.read()).decode()
+#     return f"data:image/png;base64,{encoded}"
+
+def get_base64_image(path):
+    with open(path, "rb") as img_file:
+        byte_data = BytesIO(img_file.read())
+        encoded = base64.b64encode(byte_data.getvalue()).decode()
+        return f"data:image/png;base64,{encoded}"
 
 # Page configuration
 st.set_page_config(page_title="AM Plumbing", layout="wide")
@@ -11,6 +24,8 @@ gallery_images = [
     ("Water Filter Installation.jpeg", "Water Filter Installation"),
     ("gasGeyser2.jpeg", "Gas Geyser Installation"),
     ("burstPipe.jpeg", "Burst Pipe Repair")]
+
+banner_base64 = get_base64_image("assets\banner2.png")
 
 # Session state page
 if "page" not in st.session_state:
@@ -200,5 +215,3 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
-
-
