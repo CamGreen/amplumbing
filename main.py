@@ -28,7 +28,7 @@ def get_base64_image(path):
         return f"data:image/png;base64,{encoded}"
 
 # ✅ NEW relative path instead of local disk location
-banner_base64 = get_base64_image("assets/banner2.png")
+banner_base64 = get_base64_image("assets/banner3.png")
 
 st.markdown(
     f"""
@@ -217,6 +217,7 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
+
 
 
 
