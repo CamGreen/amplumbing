@@ -191,7 +191,7 @@ elif page == "Gallery":
                 )
 
 elif page == "Contact":
-    st.subheader("Contact Us")
+    st.subheader("Contact Us for a free quote!")
 
     st.write("Whether it’s an emergency or you’d like to plan ahead, we’re here to help!")
 
@@ -213,6 +213,7 @@ elif page == "Contact":
     st.markdown("📍 **Based in:** Pretoria and Johanessburg Areas")
     st.markdown("📞 **Phone:** 083 783 9093")
     st.markdown("📧 **Email:** info@amplumbing.com")
+
 
 
 
